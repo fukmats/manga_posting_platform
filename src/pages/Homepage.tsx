@@ -16,7 +16,8 @@ const CONTENTS = gql`
 * Home page 
 * We display contents 
 */
-const Homepage = ()  => {
+
+const Homepage = (): JSX.Element => {
     const { loading, error, data } = useQuery(CONTENTS);
     console.log();
     if (loading) return <p>"Loading..."</p>;
