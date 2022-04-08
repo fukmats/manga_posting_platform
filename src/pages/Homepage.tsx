@@ -25,7 +25,7 @@ const Homepage = (): JSX.Element => {
     if (error) return <p>`Error! ${error.message}`</p>;
 
     return (
-        <p>{ JSON.stringify(data) }</p>
+        <p>{ data && JSON.stringify(data) }</p>
     );
 };
 
