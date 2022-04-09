@@ -5,8 +5,8 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 SwiperCore.use([Navigation, Pagination]);
 
-const Row = ( content: { [field: string]: any } ) => {
-    const { title, thumbnail } = content;
+const Row = ( category: { [field: string]: any } ) => {
+    const { categoryId, categoryName, contents } = category;
     const prevRef = useRef<HTMLDivElement>(null)
     const nextRef = useRef<HTMLDivElement>(null)
     
@@ -18,8 +18,8 @@ const Row = ( content: { [field: string]: any } ) => {
             980: {slidesPerView: 4, slidesPerGroup: 4}
         },
         navigation: {
-            prevEl: prevRef.current ? prevRef.current : undefined,
-            nextEl: nextRef.current ? nextRef.current : undefined,
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
         },
         pagination: true,
 
@@ -35,7 +35,16 @@ const Row = ( content: { [field: string]: any } ) => {
         //     swiper.navigation.update();
         //   }}
         >
-            <SwiperSlide>slide 1</SwiperSlide>
+            {contents && 
+            contents.map((content) => (
+                
+                <SwiperSlide
+                key={content.contentId}
+                >
+                    {content.thumbnail}
+                </SwiperSlide>
+            ))
+            }
             <div ref={prevRef}>Prev</div>
             <div ref={nextRef}>Next</div>
         </Swiper>
