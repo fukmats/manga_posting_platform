@@ -1,5 +1,8 @@
 const { gql } = require('apollo-server');
 const typeDefs = gql`
+    type Query {
+        Categories: [Category!]!
+    }
     type Category {
         categoryId: ID!
         categoryName: String!
@@ -8,7 +11,6 @@ const typeDefs = gql`
     "Information to be displayed on the homepage"
     type Content {
         contentId: ID!
-        language: String!
         "Thumbnail image must include the title logo"
         thumbnail: String!
         "Text information is not displayed on the homepage"
