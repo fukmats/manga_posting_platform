@@ -39,7 +39,7 @@ const Row = (category) => {
         <h3 className="mb-4 py-0 px-[4%] text-[1rem] leading-[1.25vw] text-left inline-block md:text-[18px] xl:text-[1.2vw]">
           <span>{categoryName}</span>
         </h3>
-      <div className="relative">
+      <div className="relative z-10">
         <div
           className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 left-0 rounded-r-[5px]"
           ref={navigationPrevRef}
@@ -53,6 +53,7 @@ const Row = (category) => {
           <MdChevronRight size="3em" style={{ color: "white" }} />
         </div>
         <Swiper
+          style={{overflow: 'visible'}}
           {...SwiperParams}
           // css={styleSwiperWrapper}
           // onBeforeInit={(swiper: SwiperCore) => {
