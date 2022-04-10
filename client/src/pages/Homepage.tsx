@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
-import Row from "../components/Row";
+import Slider from "../components/Slider";
 
 const CONTENTS = gql`
   query getContents {
@@ -34,7 +34,7 @@ const Homepage = (): JSX.Element => {
   // )
   return (
     <div className="overflow-hidden">
-    {data && data?.Categories?.map((row: { [field: string]: any }) => <Row key={row.id} {...row} />)}
+    {data && data?.Categories?.map((row: { [field: string]: any }) => <Slider key={row.id} {...row} />)}
     </div>
   );
 };
