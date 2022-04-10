@@ -1,1 +1,1 @@
-export { default as Row } from './Slider';
+export { default as Row } from './Row';

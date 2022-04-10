@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetContentsQuery } from "../graphql/generated";
-import Slider from "../components/Slider";
+import Row from "../components/Row";
 
 // mock
 import mocksJson from "./mocks"
@@ -26,7 +26,7 @@ const Homepage = (): JSX.Element => {
   
   return (
     <div className="overflow-hidden">
-    {data && data?.Categories?.map((row: { [field: string]: any }) => <Slider key={row.id} {...row} />)}
+    {data && data?.Categories?.map((row: { [field: string]: any }) => <Row key={row.id} {...row} />)}
     </div>
   );
 };

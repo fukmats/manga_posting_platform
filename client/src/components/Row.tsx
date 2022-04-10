@@ -6,13 +6,16 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 // Swiper
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "./swiper_row.css"
+import "swiper/css";
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
+import "./swiper.css";
 // import { css } from "@emotion/react";
 
 SwiperCore.use([Navigation, Pagination]);
 
-const Slider = (category) => {
+const Row = (category) => {
   const { categoryName, contents } = category;
   const navigationPrevRef = useRef<HTMLDivElement>(null);
   const navigationNextRef = useRef<HTMLDivElement>(null);
@@ -32,11 +35,11 @@ const Slider = (category) => {
   };
 
   return (
-    <div className="block py-[1.5vh] px-0 md:py-[3vh] md:px-0">
+    <div className="Row block py-[1.5vh] px-0 md:py-[3vh] md:px-0">
         <h3 className="mb-4 py-0 px-[4%] text-[1rem] leading-[1.25vw] text-left inline-block md:text-[18px] xl:text-[1.2vw]">
           <span>{categoryName}</span>
         </h3>
-      <div className="flex flex-nowrap relative">
+      <div className="relative">
         <div
           className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 left-0 rounded-r-[5px]"
           ref={navigationPrevRef}
@@ -75,6 +78,6 @@ const Slider = (category) => {
   );
 };
 
-export default Slider;
+export default Row;
 
 // const styleSwiperWrapper = css``;
