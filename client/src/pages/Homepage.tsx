@@ -27,11 +27,7 @@ const Homepage = (): JSX.Element => {
 
   if (error) return <p>`Error! ${error.message}`</p>;
 
-  // return (
-  //     data && data.map((row: {id: React.Key, content: Content}) => (
-  //         <Row key={row.id} {...row} />
-  //     ))
-  // )
+
   return (
     <div className="overflow-hidden">
     {data && data?.Categories?.map((row: { [field: string]: any }) => <Slider key={row.id} {...row} />)}
