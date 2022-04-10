@@ -10,7 +10,7 @@ const Card = ( content ) => {
     console.log(contentId);
 
     return (
-        <div className="card_content relative mr-2 cursor-pointer">
+        <div className="relative mr-2 cursor-pointer">
             {thumbnail ? (<img className="inline-block h-[100%] w-[100%] rounded-[5px]" src={thumbnail} alt={contentId}/>
             ) : <span className="text-white">{contentId}</span>
             }
