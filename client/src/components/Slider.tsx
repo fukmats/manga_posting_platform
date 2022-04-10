@@ -1,7 +1,7 @@
 // /** @jsxImportSource @emotion/react */
 import React, { useRef } from "react";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import Card from "./Card";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 // Swiper
 import SwiperCore, { Navigation, Pagination } from "swiper";
@@ -29,7 +29,6 @@ const Slider = (category) => {
       nextEl: navigationNextRef.current,
     },
     pagination: true,
-    
   };
 
   return (
@@ -37,21 +36,20 @@ const Slider = (category) => {
         <h3 className="mb-4 py-0 px-[4%] text-[1rem] leading-[1.25vw] text-left inline-block md:text-[18px] xl:text-[1.2vw]">
           <span>{categoryName}</span>
         </h3>
-      <div className="flex relative ">
+      <div className="flex flex-nowrap relative">
         <div
-          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 left-0"
+          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 left-0 rounded-r-[5px]"
           ref={navigationPrevRef}
         >
           <MdChevronLeft size="3em" style={{ color: "white" }} />
         </div>
         <div
-          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 right-0"
+          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 right-0 rounded-l-[5px]"
           ref={navigationNextRef}
         >
           <MdChevronRight size="3em" style={{ color: "white" }} />
         </div>
         <Swiper
-          className=""
           {...SwiperParams}
           // css={styleSwiperWrapper}
           // onBeforeInit={(swiper: SwiperCore) => {
@@ -63,7 +61,7 @@ const Slider = (category) => {
         >
           {contents &&
             contents.map((content) => (
-              <SwiperSlide className="inline-flex" key={content.contentId}>
+              <SwiperSlide className="inline-flex scale-1 " key={content.contentId}>
                 {/* <div className="text-black-100">content.thumbnail</div> */}
                 <Card
                 key={content.contentId}
