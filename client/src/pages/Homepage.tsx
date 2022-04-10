@@ -33,7 +33,9 @@ const Homepage = (): JSX.Element => {
   //     ))
   // )
   return (
-    data && data?.Categories?.map((row: { [field: string]: any }) => <Row key={row.id} {...row} />)
+    <div className="overflow-hidden">
+    {data && data?.Categories?.map((row: { [field: string]: any }) => <Row key={row.id} {...row} />)}
+    </div>
   );
 };
 

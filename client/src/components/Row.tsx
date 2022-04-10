@@ -1,58 +1,75 @@
+import { title } from "process";
 import React, { useRef } from "react";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 // Swiper
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 SwiperCore.use([Navigation, Pagination]);
 
-const Row = ( category: { [field: string]: any } ) => {
-    const { categoryId, categoryName, contents } = category;
-    const prevRef = useRef<HTMLDivElement>(null)
-    const nextRef = useRef<HTMLDivElement>(null)
-    
-    const SwiperParams = {
-        breakpoints: {
-            0: {slidesPerView: 1, slidesPerGroup: 1},
-            320: {slidesPerView: 2, slidesPerGroup: 2},
-            640: {slidesPerView: 3, slidesPerGroup: 3},
-            980: {slidesPerView: 4, slidesPerGroup: 4}
-        },
-        navigation: {
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-        },
-        pagination: true,
+const Row = (category: { [field: string]: any }) => {
+  const { categoryId, categoryName, contents } = category;
+  const navigationPrevRef = useRef<HTMLDivElement>(null);
+  const navigationNextRef = useRef<HTMLDivElement>(null);
 
-    }
+  const SwiperParams = {
+    breakpoints: {
+      0: { slidesPerView: 1, slidesPerGroup: 1 },
+      320: { slidesPerView: 2, slidesPerGroup: 2 },
+      640: { slidesPerView: 3, slidesPerGroup: 3 },
+      980: { slidesPerView: 4, slidesPerGroup: 4 },
+    },
+    navigation: {
+      prevEl: navigationPrevRef.current,
+      nextEl: navigationNextRef.current,
+    },
+    pagination: true,
+  };
 
-    return (
-        <Swiper
-        {...SwiperParams}
-        // onBeforeInit={(swiper: SwiperCore) => {
-        //     swiper.params.navigation.prevEl = prevRef.current;
-        //     swiper.params.navigation.nextEl = nextRef.current;
-        //     swiper.navigation.init();
-        //     swiper.navigation.update();
-        //   }}
+  return (
+    <div className="block py-[1.5vh] px-0 md:py-[3vh] md:px-0">
+      <div>
+        <h3 className="mb-4 py-0 px-[4%] text-[1rem] leading-[1.25vw] text-left inline-block md:text-[18px] xl:text-[1.2vw]">
+          <span>{categoryName}</span>
+        </h3>
+      </div>
+      <div>
+        <div
+          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 left-0"
+          ref={navigationPrevRef}
         >
-            {contents && 
+          <MdChevronLeft size="3em" style={{ color: "white" }} />
+        </div>
+        <div
+          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 right-0"
+          ref={navigationNextRef}
+        >
+          <MdChevronRight size="3em" style={{ color: "white" }} />
+        </div>
+        <Swiper
+          {...SwiperParams}
+          // onBeforeInit={(swiper: SwiperCore) => {
+          //     swiper.params.navigation.prevEl = navigationPrevRef.current;
+          //     swiper.params.navigation.nextEl = navigationNextRef.current;
+          //     swiper.navigation.init();
+          //     swiper.navigation.update();
+          //   }}
+        >
+          {contents &&
             contents.map((content) => (
-                
-                <SwiperSlide
+              <SwiperSlide className="inline-flex" key={content.contentId}>
+                <div className="text-black-100">content.thumbnail</div>
+                {/* <ConteinerThumbnail
                 key={content.contentId}
-                >
-                    {content.thumbnail}
-                </SwiperSlide>
-            ))
-            }
-            <div ref={prevRef}>Prev</div>
-            <div ref={nextRef}>Next</div>
+                thumbnail={content.thumbnail}
+                {...contents}
+              /> */}
+              </SwiperSlide>
+            ))}
         </Swiper>
-
-    )
-
-
-
-}
+      </div>
+    </div>
+  );
+};
 
 export default Row;
