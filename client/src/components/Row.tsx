@@ -53,9 +53,7 @@ const Row = (category) => {
           <MdChevronRight size="3em" style={{ color: "white" }} />
         </div>
         <Swiper
-          style={{overflow: 'visible'}}
           {...SwiperParams}
-          // css={styleSwiperWrapper}
           // onBeforeInit={(swiper: SwiperCore) => {
           //     swiper.params.navigation.prevEl = navigationPrevRef.current;
           //     swiper.params.navigation.nextEl = navigationNextRef.current;
@@ -80,5 +78,3 @@ const Row = (category) => {
 };
 
 export default Row;
-
-// const styleSwiperWrapper = css``;

@@ -46,6 +46,18 @@ const mocks = {
           {
             "contentId": "8",
             "thumbnail": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx117195-r3kf8eF0xkDJ.png"
+          },
+          {
+            "contentId": "1",
+            "thumbnail": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx30013-oT7YguhEK1TE.jpg"
+          },
+          {
+            "contentId": "2",
+            "thumbnail": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx108556-NHjkz0BNJhLx.jpg"
+          },
+          {
+            "contentId": "3",
+            "thumbnail": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx126297-SPiM7QtUnJ4P.jpg"
           }
         ]
       }

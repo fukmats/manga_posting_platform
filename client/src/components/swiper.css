@@ -1,3 +1,6 @@
+.swiper {
+    overflow: visible;
+}
 @media (min-width: 768px) {
   .Row .swiper-wrapper:hover .swiper-slide {
     transform: translateX(-15%);
