@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+// /** @jsxImportSource @emotion/react */
 import React, { useRef } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import Card from "./Card";
@@ -6,13 +6,13 @@ import Card from "./Card";
 // Swiper
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+// import "swiper/css";
 // import "./swiper_row.css"
-import { css } from "@emotion/react";
+// import { css } from "@emotion/react";
 
 SwiperCore.use([Navigation, Pagination]);
 
-const Slider = (category: { [field: string]: any }) => {
+const Slider = (category) => {
   const { categoryName, contents } = category;
   const navigationPrevRef = useRef<HTMLDivElement>(null);
   const navigationNextRef = useRef<HTMLDivElement>(null);
@@ -29,6 +29,7 @@ const Slider = (category: { [field: string]: any }) => {
       nextEl: navigationNextRef.current,
     },
     pagination: true,
+    
   };
 
   return (
@@ -66,7 +67,7 @@ const Slider = (category: { [field: string]: any }) => {
                 {/* <div className="text-black-100">content.thumbnail</div> */}
                 <Card
                 key={content.contentId}
-                {...contents}
+                {...content}
               />
               </SwiperSlide>
             ))}
@@ -78,5 +79,4 @@ const Slider = (category: { [field: string]: any }) => {
 
 export default Slider;
 
-const styleSwiperWrapper = css`
-`;
+// const styleSwiperWrapper = css``;

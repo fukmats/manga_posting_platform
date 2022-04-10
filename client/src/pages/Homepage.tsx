@@ -1,19 +1,9 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useGetContentsQuery } from "../graphql/generated";
 import Slider from "../components/Slider";
 
-const CONTENTS = gql`
-  query getContents {
-    Categories {
-      categoryId
-      categoryName
-      contents {
-        contentId
-        thumbnail
-      }
-    }
-  }
-`;
+// mock
+import mocksJson from "./mocks"
 
 /*
  * Home page
@@ -21,13 +11,19 @@ const CONTENTS = gql`
  */
 
 const Homepage = (): JSX.Element => {
-  const { loading, error, data } = useQuery(CONTENTS);
+
+  /*
+  const { loading, error, data } = useGetContentsQuery;
   console.log();
   if (loading) return <p>"Loading..."</p>;
 
   if (error) return <p>`Error! ${error.message}`</p>;
+  */
 
+  // mock
+  const data = mocksJson.data
 
+  
   return (
     <div className="overflow-hidden">
     {data && data?.Categories?.map((row: { [field: string]: any }) => <Slider key={row.id} {...row} />)}
