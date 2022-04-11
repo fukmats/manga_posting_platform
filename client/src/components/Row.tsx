@@ -32,6 +32,7 @@ const Row = (category) => {
       nextEl: navigationNextRef.current,
     },
     pagination: true,
+    draggable: false,
   };
 
   return (
