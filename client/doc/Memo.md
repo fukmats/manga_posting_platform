@@ -16,6 +16,8 @@
 ## Reader
 
 - 視点の移動が少ない
+- 高解像度
+- 
 
 ## Builder
 
@@ -24,5 +26,6 @@
   - 数
   - 文字数
 - コマ割りの最適化
+- 作業の一部自動化
 
 <!-- https://jump-manga-school.hatenablog.com/entry/06 -->
