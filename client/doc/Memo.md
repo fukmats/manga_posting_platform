@@ -15,7 +15,11 @@
 
 ## Reader
 
-- 視点の移動が少ない
+- ユーザーのストレスを最小限に
+  - 　視点の移動が少ない
+- 絵を引き立てる
+  - 高解像度
+- 
 
 ## Builder
 
@@ -24,5 +28,17 @@
   - 数
   - 文字数
 - コマ割りの最適化
-
+- 作業の一部自動化
 <!-- https://jump-manga-school.hatenablog.com/entry/06 -->
+
+## Data analysis
+
+- 人気作品の傾向
+  - トレンド
+  - 縦型・横型
+- UX最適化
+  - 吹き出し
+  - コマ割
+  - Reader
+  - Homepage
+- 
