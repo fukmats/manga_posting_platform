@@ -42,19 +42,39 @@ const Row = (category) => {
         </h3>
       <div className="relative">
         <div
-          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 left-0 rounded-r-[5px]"
+          className="group absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 left-0 rounded-r-[5px]"
           ref={navigationPrevRef}
         >
-          <MdChevronLeft size="3em" style={{ color: "white" }} />
+          <MdChevronLeft className="group-hover:opacity-100 opacity-0" size="3em" style={{ color: "white" }} />
         </div>
         <div
-          className="absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 right-0 rounded-l-[5px]"
+          className="group absolute top-0 flex items-center justify-center text-[#f2f2f2] w-[4%] h-[100%] bg-[#101011] bg-opacity-30 z-10 right-0 rounded-l-[5px]"
           ref={navigationNextRef}
         >
-          <MdChevronRight size="3em" style={{ color: "white" }} />
+          <MdChevronRight className="group-hover:opacity-100 opacity-0" size="3em" style={{ color: "white" }} />
         </div>
         <Swiper
           {...SwiperParams}
+          onSwiper={(swiper) => {
+            // Delay execution for the refs to be defined
+            setTimeout(() => {
+              // Override prevEl & nextEl now that refs are defined
+
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              // eslint-disable-next-line no-param-reassign
+              swiper.params.navigation.prevEl = navigationPrevRef.current
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              // eslint-disable-next-line no-param-reassign
+              swiper.params.navigation.nextEl = navigationNextRef.current
+    
+              // Re-init navigation
+              swiper.navigation.destroy()
+              swiper.navigation.init()
+              swiper.navigation.update()
+            })
+          }}
           // onBeforeInit={(swiper: SwiperCore) => {
           //     swiper.params.navigation.prevEl = navigationPrevRef.current;
           //     swiper.params.navigation.nextEl = navigationNextRef.current;
