@@ -11,7 +11,7 @@ const typeDefs = gql`
     "Information to be displayed on the homepage"
     type Content {
         contentId: ID!
-        "Thumbnail image must include the title logo"
+        "Thumbnail page must include the title logo"
         thumbnail: String!
         "Text information is not displayed on the homepage"
         contentInfo: [ContentInfo!]!
@@ -26,18 +26,26 @@ const typeDefs = gql`
         categoryID:ID!
         tags: [String]
         volumes: [Volume]
+        chapters: [Chapter]
     }
     type Volume {
         volumeId: ID!
         thumbnail:String!
         duration: Float
-        plot: String
         numberOfVolume: Int
-        images: [Image!]!
+        pages: [Page!]!
     }
-    type Image {
-        imageId: ID!
-        image: String!
+    type Chapter{
+        chapterId: ID!
+        chapterName: String!
+        thumbnail:String!
+        duration: Float
+        numberOfChapter: Int
+        pages: [Page!]!
+    }
+    type Page {
+        pageId: ID!
+        page: String!
     }
 `;
 module.exports = typeDefs;

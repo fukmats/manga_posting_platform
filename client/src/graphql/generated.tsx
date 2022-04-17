@@ -22,13 +22,23 @@ export type Category = {
   contents: Array<Content>;
 };
 
+export type Chapter = {
+  __typename?: 'Chapter';
+  chapterId: Scalars['ID'];
+  chapterName: Scalars['String'];
+  duration?: Maybe<Scalars['Float']>;
+  numberOfChapter?: Maybe<Scalars['Int']>;
+  pages: Array<Page>;
+  thumbnail: Scalars['String'];
+};
+
 /** Information to be displayed on the homepage */
 export type Content = {
   __typename?: 'Content';
   contentId: Scalars['ID'];
   /** Text information is not displayed on the homepage */
   contentInfo: Array<ContentInfo>;
-  /** Thumbnail image must include the title logo */
+  /** Thumbnail page must include the title logo */
   thumbnail: Scalars['String'];
 };
 
@@ -37,6 +47,7 @@ export type ContentInfo = {
   __typename?: 'ContentInfo';
   ContentId: Scalars['ID'];
   categoryID: Scalars['ID'];
+  chapters?: Maybe<Array<Maybe<Chapter>>>;
   creator: Scalars['String'];
   numberOfVolumes?: Maybe<Scalars['Int']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -45,10 +56,10 @@ export type ContentInfo = {
   year: Scalars['Int'];
 };
 
-export type Image = {
-  __typename?: 'Image';
-  image: Scalars['String'];
-  imageId: Scalars['ID'];
+export type Page = {
+  __typename?: 'Page';
+  page: Scalars['String'];
+  pageId: Scalars['ID'];
 };
 
 export type Query = {
@@ -59,9 +70,8 @@ export type Query = {
 export type Volume = {
   __typename?: 'Volume';
   duration?: Maybe<Scalars['Float']>;
-  images: Array<Image>;
   numberOfVolume?: Maybe<Scalars['Int']>;
-  plot?: Maybe<Scalars['String']>;
+  pages: Array<Page>;
   thumbnail: Scalars['String'];
   volumeId: Scalars['ID'];
 };

@@ -10,7 +10,7 @@ import "swiper/css";
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
-import "./swiper.css";
+import "./row_swiper.css";
 // import { css } from "@emotion/react";
 
 SwiperCore.use([Navigation, Pagination]);
@@ -19,7 +19,6 @@ const Row = (category) => {
   const { categoryName, contents } = category;
   const navigationPrevRef = useRef<HTMLDivElement>(null);
   const navigationNextRef = useRef<HTMLDivElement>(null);
-
   const SwiperParams = {
     breakpoints: {
       0: { slidesPerView: 1, slidesPerGroup: 1 },
@@ -75,12 +74,6 @@ const Row = (category) => {
               swiper.navigation.update()
             })
           }}
-          // onBeforeInit={(swiper: SwiperCore) => {
-          //     swiper.params.navigation.prevEl = navigationPrevRef.current;
-          //     swiper.params.navigation.nextEl = navigationNextRef.current;
-          //     swiper.navigation.init();
-          //     swiper.navigation.update();
-          //   }}
         >
           {contents &&
             contents.map((content) => (
