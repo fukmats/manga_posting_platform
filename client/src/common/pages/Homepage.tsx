@@ -1,9 +1,9 @@
 import React from "react";
-import { useGetContentsQuery } from "../graphql/generated";
+import { useGetContentsQuery } from "../../book/graphql/generated";
 import Row from "../components/Row";
 
 // mock
-import mocksJson from "./mocks"
+import mocksJson from "../../book/mocks"
 
 /*
  * Home page

@@ -1,7 +1,7 @@
 // /** @jsxImportSource @emotion/react */
 import React, { useRef } from "react";
 import Page from "../components/Page";
-import { Chapter } from "../graphql/generated";
+import { Chapter } from "../../book/graphql/generated";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 // Swiper

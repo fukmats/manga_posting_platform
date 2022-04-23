@@ -1,0 +1,14 @@
+type Stats @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  numPlay: Int
+  timePlay: Int
+}
+
+type Video @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  link: String!
+  thumbnail: String
+  title: String
+  Stats: Stats @hasOne
+  tag: [String]
+}

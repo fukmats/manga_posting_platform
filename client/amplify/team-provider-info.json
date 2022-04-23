@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-niji-dev-01546-authRole",
+      "UnauthRoleArn": "arn:aws:iam::939336179365:role/amplify-niji-dev-01546-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::939336179365:role/amplify-niji-dev-01546-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-niji-dev-01546-deployment",
+      "UnauthRoleName": "amplify-niji-dev-01546-unauthRole",
+      "StackName": "amplify-niji-dev-01546",
+      "StackId": "arn:aws:cloudformation:us-east-1:939336179365:stack/amplify-niji-dev-01546/17b14060-c24f-11ec-a37b-128d09dcc3e5",
+      "AmplifyAppId": "d1lfue18vcfpxw"
+    }
+  }
+}
