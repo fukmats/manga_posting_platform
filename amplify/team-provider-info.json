@@ -1,15 +1,15 @@
 {
-  "dev": {
+  "master": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-niji-dev-01546-authRole",
-      "UnauthRoleArn": "arn:aws:iam::939336179365:role/amplify-niji-dev-01546-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::939336179365:role/amplify-niji-dev-01546-authRole",
+      "AuthRoleName": "amplify-niji-master-34210-authRole",
+      "UnauthRoleArn": "arn:aws:iam::062745689051:role/amplify-niji-master-34210-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::062745689051:role/amplify-niji-master-34210-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-niji-dev-01546-deployment",
-      "UnauthRoleName": "amplify-niji-dev-01546-unauthRole",
-      "StackName": "amplify-niji-dev-01546",
-      "StackId": "arn:aws:cloudformation:us-east-1:939336179365:stack/amplify-niji-dev-01546/17b14060-c24f-11ec-a37b-128d09dcc3e5",
-      "AmplifyAppId": "d1lfue18vcfpxw"
+      "DeploymentBucketName": "amplify-niji-master-34210-deployment",
+      "UnauthRoleName": "amplify-niji-master-34210-unauthRole",
+      "StackName": "amplify-niji-master-34210",
+      "StackId": "arn:aws:cloudformation:us-east-1:062745689051:stack/amplify-niji-master-34210/d5f99b50-d337-11ec-a8d8-0a1bb5e4cccf",
+      "AmplifyAppId": "d284tr29jzbtgy"
     }
   }
 }
