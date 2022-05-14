@@ -8,7 +8,7 @@
                     <mxGeometry x="70" y="168.5" width="45" height="63" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="" style="rounded=1;arcSize=10;dashed=0;fillColor=none;gradientColor=none;strokeWidth=2;" vertex="1" parent="1">
-                    <mxGeometry x="180" y="50" width="640" height="300" as="geometry"/>
+                    <mxGeometry x="110" y="-60" width="820" height="440" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="AWS AppSync" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.appsync;" vertex="1" parent="1">
                     <mxGeometry x="390" y="150" width="80" height="100" as="geometry"/>
@@ -22,14 +22,11 @@
                 <mxCell id="22" value="AWS Lambda" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
                     <mxGeometry x="550" y="150" width="80" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="AWS CloudFormation" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.cloudformation;" vertex="1" parent="1">
-                    <mxGeometry x="260" y="-7" width="80" height="110" as="geometry"/>
-                </mxCell>
                 <mxCell id="13" value="" style="dashed=0;html=1;shape=mxgraph.aws3.cloud;fillColor=#F58536;gradientColor=none;dashed=0;" vertex="1" parent="1">
-                    <mxGeometry x="200" y="30" width="52" height="36" as="geometry"/>
+                    <mxGeometry x="100" y="-80" width="52" height="36" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="260" y="-210" width="75" height="115" as="geometry"/>
+                    <mxGeometry x="280" y="-180" width="75" height="115" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.github" vertex="1" parent="28">
                     <mxGeometry width="75" height="75" as="geometry"/>
@@ -66,6 +63,14 @@
                         <mxPoint x="650" y="210" as="sourcePoint"/>
                         <mxPoint x="720" y="200" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="50" width="640" height="280" as="geometry">
+                        <mxRectangle x="200" y="50" width="50" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="AWS CloudFormation" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.cloudformation;" vertex="1" parent="46">
+                    <mxGeometry x="-12.5" y="-40" width="80" height="110" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
