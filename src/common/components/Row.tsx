@@ -55,9 +55,8 @@ const Row = (category) => {
         <Swiper
           {...SwiperParams}
           onSwiper={(swiper) => {
-            // Delay execution for the refs to be defined
+            // Delay execution
             setTimeout(() => {
-              // Override prevEl & nextEl now that refs are defined
 
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
