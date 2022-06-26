@@ -35,14 +35,8 @@ const Homepage = (): JSX.Element => {
     }
   }
 
-  // console.log();
-  // if (loading) return <p>"Loading..."</p>;
-
-  // if (error) return <p>`Error! ${error.message}`</p>;
-
-
   // mock
-  // const data = mocksJson.data
+  // const categories = mocksJson.data
 
   return (
     <div className="overflow-hidden">
