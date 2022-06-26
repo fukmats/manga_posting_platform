@@ -10,12 +10,6 @@ export const createCategories = /* GraphQL */ `
     createCategories(input: $input, condition: $condition) {
       id
       name
-      contents {
-        id
-        thumbnail
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -29,12 +23,6 @@ export const updateCategories = /* GraphQL */ `
     updateCategories(input: $input, condition: $condition) {
       id
       name
-      contents {
-        id
-        thumbnail
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -48,12 +36,6 @@ export const deleteCategories = /* GraphQL */ `
     deleteCategories(input: $input, condition: $condition) {
       id
       name
-      contents {
-        id
-        thumbnail
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -66,7 +48,8 @@ export const createContents = /* GraphQL */ `
   ) {
     createContents(input: $input, condition: $condition) {
       id
-      thumbnail
+      thumbnailUrl
+      categoryName
       createdAt
       updatedAt
     }
@@ -79,7 +62,8 @@ export const updateContents = /* GraphQL */ `
   ) {
     updateContents(input: $input, condition: $condition) {
       id
-      thumbnail
+      thumbnailUrl
+      categoryName
       createdAt
       updatedAt
     }
@@ -92,7 +76,8 @@ export const deleteContents = /* GraphQL */ `
   ) {
     deleteContents(input: $input, condition: $condition) {
       id
-      thumbnail
+      thumbnailUrl
+      categoryName
       createdAt
       updatedAt
     }

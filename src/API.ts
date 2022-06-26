@@ -58,15 +58,6 @@ export type Categories = {
   __typename: "Categories",
   id: string,
   name: string,
-  contents?:  Array<Contents | null > | null,
-  createdAt: string,
-  updatedAt: string,
-};
-
-export type Contents = {
-  __typename: "Contents",
-  id: string,
-  thumbnail: string,
   createdAt: string,
   updatedAt: string,
 };
@@ -82,19 +73,31 @@ export type DeleteCategoriesInput = {
 
 export type CreateContentsInput = {
   id?: string | null,
-  thumbnail: string,
+  thumbnailUrl: string,
+  categoryName: string,
 };
 
 export type ModelContentsConditionInput = {
-  thumbnail?: ModelStringInput | null,
+  thumbnailUrl?: ModelStringInput | null,
+  categoryName?: ModelStringInput | null,
   and?: Array< ModelContentsConditionInput | null > | null,
   or?: Array< ModelContentsConditionInput | null > | null,
   not?: ModelContentsConditionInput | null,
 };
 
+export type Contents = {
+  __typename: "Contents",
+  id: string,
+  thumbnailUrl: string,
+  categoryName: string,
+  createdAt: string,
+  updatedAt: string,
+};
+
 export type UpdateContentsInput = {
   id: string,
-  thumbnail?: string | null,
+  thumbnailUrl?: string | null,
+  categoryName?: string | null,
 };
 
 export type DeleteContentsInput = {
@@ -133,7 +136,8 @@ export type ModelCategoriesConnection = {
 
 export type ModelContentsFilterInput = {
   id?: ModelIDInput | null,
-  thumbnail?: ModelStringInput | null,
+  thumbnailUrl?: ModelStringInput | null,
+  categoryName?: ModelStringInput | null,
   and?: Array< ModelContentsFilterInput | null > | null,
   or?: Array< ModelContentsFilterInput | null > | null,
   not?: ModelContentsFilterInput | null,
@@ -155,13 +159,6 @@ export type CreateCategoriesMutation = {
     __typename: "Categories",
     id: string,
     name: string,
-    contents?:  Array< {
-      __typename: "Contents",
-      id: string,
-      thumbnail: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -177,13 +174,6 @@ export type UpdateCategoriesMutation = {
     __typename: "Categories",
     id: string,
     name: string,
-    contents?:  Array< {
-      __typename: "Contents",
-      id: string,
-      thumbnail: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -199,13 +189,6 @@ export type DeleteCategoriesMutation = {
     __typename: "Categories",
     id: string,
     name: string,
-    contents?:  Array< {
-      __typename: "Contents",
-      id: string,
-      thumbnail: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -220,7 +203,8 @@ export type CreateContentsMutation = {
   createContents?:  {
     __typename: "Contents",
     id: string,
-    thumbnail: string,
+    thumbnailUrl: string,
+    categoryName: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -235,7 +219,8 @@ export type UpdateContentsMutation = {
   updateContents?:  {
     __typename: "Contents",
     id: string,
-    thumbnail: string,
+    thumbnailUrl: string,
+    categoryName: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -250,7 +235,8 @@ export type DeleteContentsMutation = {
   deleteContents?:  {
     __typename: "Contents",
     id: string,
-    thumbnail: string,
+    thumbnailUrl: string,
+    categoryName: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -265,13 +251,6 @@ export type GetCategoriesQuery = {
     __typename: "Categories",
     id: string,
     name: string,
-    contents?:  Array< {
-      __typename: "Contents",
-      id: string,
-      thumbnail: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -290,13 +269,6 @@ export type ListCategoriesQuery = {
       __typename: "Categories",
       id: string,
       name: string,
-      contents?:  Array< {
-        __typename: "Contents",
-        id: string,
-        thumbnail: string,
-        createdAt: string,
-        updatedAt: string,
-      } | null > | null,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -312,7 +284,8 @@ export type GetContentsQuery = {
   getContents?:  {
     __typename: "Contents",
     id: string,
-    thumbnail: string,
+    thumbnailUrl: string,
+    categoryName: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -330,7 +303,8 @@ export type ListContentsQuery = {
     items:  Array< {
       __typename: "Contents",
       id: string,
-      thumbnail: string,
+      thumbnailUrl: string,
+      categoryName: string,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -343,13 +317,6 @@ export type OnCreateCategoriesSubscription = {
     __typename: "Categories",
     id: string,
     name: string,
-    contents?:  Array< {
-      __typename: "Contents",
-      id: string,
-      thumbnail: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -360,13 +327,6 @@ export type OnUpdateCategoriesSubscription = {
     __typename: "Categories",
     id: string,
     name: string,
-    contents?:  Array< {
-      __typename: "Contents",
-      id: string,
-      thumbnail: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -377,13 +337,6 @@ export type OnDeleteCategoriesSubscription = {
     __typename: "Categories",
     id: string,
     name: string,
-    contents?:  Array< {
-      __typename: "Contents",
-      id: string,
-      thumbnail: string,
-      createdAt: string,
-      updatedAt: string,
-    } | null > | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -393,7 +346,8 @@ export type OnCreateContentsSubscription = {
   onCreateContents?:  {
     __typename: "Contents",
     id: string,
-    thumbnail: string,
+    thumbnailUrl: string,
+    categoryName: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -403,7 +357,8 @@ export type OnUpdateContentsSubscription = {
   onUpdateContents?:  {
     __typename: "Contents",
     id: string,
-    thumbnail: string,
+    thumbnailUrl: string,
+    categoryName: string,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -413,7 +368,8 @@ export type OnDeleteContentsSubscription = {
   onDeleteContents?:  {
     __typename: "Contents",
     id: string,
-    thumbnail: string,
+    thumbnailUrl: string,
+    categoryName: string,
     createdAt: string,
     updatedAt: string,
   } | null,
