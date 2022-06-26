@@ -5,24 +5,15 @@ import { BrowserRouter } from "react-router-dom"
 import App from './App';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import reportWebVitals from './reportWebVitals';
-import Amplify from 'aws-amplify'
-import awsconfig from './video/aws-exports'
-
-Amplify.configure(awsconfig)
-
-
-const client = new ApolloClient({
-  uri: 'http://localhost:4000',
-  cache: new InMemoryCache(),
-});
+import { Amplify } from 'aws-amplify';
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
       <BrowserRouter>
        <App />
       </BrowserRouter>
-    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

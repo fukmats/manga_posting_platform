@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mangaapp-dev-155053-authRole",
+      "UnauthRoleArn": "arn:aws:iam::939336179365:role/amplify-mangaapp-dev-155053-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::939336179365:role/amplify-mangaapp-dev-155053-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mangaapp-dev-155053-deployment",
+      "UnauthRoleName": "amplify-mangaapp-dev-155053-unauthRole",
+      "StackName": "amplify-mangaapp-dev-155053",
+      "StackId": "arn:aws:cloudformation:us-east-1:939336179365:stack/amplify-mangaapp-dev-155053/ffd9b690-f389-11ec-aa47-12664c339681",
+      "AmplifyAppId": "d2ze15ddrlrfmh"
+    }
+  }
+}
