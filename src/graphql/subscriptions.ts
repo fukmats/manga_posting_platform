@@ -7,12 +7,6 @@ export const onCreateCategories = /* GraphQL */ `
     onCreateCategories {
       id
       name
-      contents {
-        id
-        thumbnail
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -23,12 +17,6 @@ export const onUpdateCategories = /* GraphQL */ `
     onUpdateCategories {
       id
       name
-      contents {
-        id
-        thumbnail
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -39,12 +27,6 @@ export const onDeleteCategories = /* GraphQL */ `
     onDeleteCategories {
       id
       name
-      contents {
-        id
-        thumbnail
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -54,7 +36,8 @@ export const onCreateContents = /* GraphQL */ `
   subscription OnCreateContents {
     onCreateContents {
       id
-      thumbnail
+      thumbnailUrl
+      categoryName
       createdAt
       updatedAt
     }
@@ -64,7 +47,8 @@ export const onUpdateContents = /* GraphQL */ `
   subscription OnUpdateContents {
     onUpdateContents {
       id
-      thumbnail
+      thumbnailUrl
+      categoryName
       createdAt
       updatedAt
     }
@@ -74,7 +58,8 @@ export const onDeleteContents = /* GraphQL */ `
   subscription OnDeleteContents {
     onDeleteContents {
       id
-      thumbnail
+      thumbnailUrl
+      categoryName
       createdAt
       updatedAt
     }

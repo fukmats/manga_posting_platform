@@ -7,12 +7,6 @@ export const getCategories = /* GraphQL */ `
     getCategories(id: $id) {
       id
       name
-      contents {
-        id
-        thumbnail
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
     }
@@ -28,12 +22,6 @@ export const listCategories = /* GraphQL */ `
       items {
         id
         name
-        contents {
-          id
-          thumbnail
-          createdAt
-          updatedAt
-        }
         createdAt
         updatedAt
       }
@@ -45,7 +33,8 @@ export const getContents = /* GraphQL */ `
   query GetContents($id: ID!) {
     getContents(id: $id) {
       id
-      thumbnail
+      thumbnailUrl
+      categoryName
       createdAt
       updatedAt
     }
@@ -60,7 +49,8 @@ export const listContents = /* GraphQL */ `
     listContents(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        thumbnail
+        thumbnailUrl
+        categoryName
         createdAt
         updatedAt
       }
